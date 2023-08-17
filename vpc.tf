@@ -1,3 +1,13 @@
+terraform {
+  cloud {
+    organization = "terraform-lange"
+
+    workspaces {
+      name = "Lab_07"
+    }
+  }
+}
+
 resource "aws_internet_gateway" "igw" {
   vpc_id = aws_vpc.vpc_virginia.id
 
