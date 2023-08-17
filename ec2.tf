@@ -13,7 +13,6 @@ resource "aws_instance" "public_ec2" {
   }
 }
 
-
 resource "aws_instance" "monitoring_ec2" {
   count                  = var.enable_monitoring == 1 ? 1 : 0
   ami                    = var.ec2_spec.ami
