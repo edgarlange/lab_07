@@ -9,8 +9,6 @@ tags = {
   "Region"      = "virginia"
 }
 
-sg_ingress_cidr = "190.140.80.94/32"
-
 ec2_spec = {
   "ami"           = "ami-0f34c5ae932e6f0e4"
   "instance_type" = "t2.micro"
@@ -18,4 +16,4 @@ ec2_spec = {
 
 enable_monitoring = 0
 
-ingress_port_list = [22, 80, 443]
+
