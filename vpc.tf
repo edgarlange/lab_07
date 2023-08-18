@@ -68,7 +68,7 @@ resource "aws_security_group" "sg_public_instance" {
     content {
       from_port   = ingress.value
       to_port     = ingress.value
-      protocol    = tcp
+      protocol    = "tcp"
       cidr_blocks = var.sg_ingress_cidr
     }
   }
