@@ -8,14 +8,17 @@ terraform {
 }
 
 module "olympo_vpc" {
-  source   = "./modules/vpc"
-  vpc_name = "vpc_virginia-${local.sufix}"
+  source        = "./modules/vpc"
+  vpc_name      = "vpc_virginia-${local.sufix}"
+  virginia_cidr = "10.215.0.0/16"
 
 }
 module "olympo_bucket" {
   source      = "./modules/s3"
   bucket_name = "olympo-${local.s3-sufix}"
 }
+
+
 
 output "s3_arn" {
   value = module.olympo_bucket.s3_bucket_arn
