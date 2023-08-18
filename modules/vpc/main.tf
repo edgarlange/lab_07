@@ -1,16 +1,5 @@
-terraform {
-  cloud {
-    organization = "terraform-lange"
-
-    workspaces {
-      name = "Lab_07"
-    }
-  }
-}
-
 resource "aws_internet_gateway" "igw" {
   vpc_id = aws_vpc.vpc_virginia.id
-
   tags = {
     Name = "IGW VPC Virginia"
   }
@@ -19,7 +8,7 @@ resource "aws_internet_gateway" "igw" {
 resource "aws_vpc" "vpc_virginia" {
   cidr_block = var.virginia_cidr
   tags = {
-    Name = "vpc_virginia-${local.sufix}"
+    Name = var.vpc_name
   }
 }
 
@@ -42,12 +31,10 @@ resource "aws_subnet" "private_subnet" {
 
 resource "aws_route_table" "public_crt" {
   vpc_id = aws_vpc.vpc_virginia.id
-
   route {
     cidr_block = "0.0.0.0/0"
     gateway_id = aws_internet_gateway.igw.id
   }
-
   tags = {
     Name = "Public CRT"
   }
@@ -79,7 +66,6 @@ resource "aws_security_group" "sg_public_instance" {
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
-
   tags = {
     Name = "Public instance SG"
   }
