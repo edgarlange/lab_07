@@ -49,7 +49,7 @@ variable "ec2_spec" {
 variable "instancias" {
   description = "Nombre de las EC2"
   type        = list(string)
-  default     = ["apache", "mysql", "jumpserver"]
+  default     = ["apache"]
 }
 
 variable "enable_monitoring" {
