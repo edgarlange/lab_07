@@ -3,6 +3,16 @@ variable "vpc_name" {
   type        = string
 }
 
+variable "public_subnet_name" {
+  description = "Nombre de la subnet publica"
+  type        = string
+}
+
+variable "private_subnet_name" {
+  description = "Nombre de la subnet privada"
+  type        = string
+}
+
 variable "virginia_cidr" {
   description = "CIDR Virginia"
   type        = string
