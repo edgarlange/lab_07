@@ -19,7 +19,7 @@ module "olympo_vpc" {
 }
 module "olympo_bucket" {
   source      = "./modules/s3"
-  bucket_name = "olympo-${local.s3-sufix}"
+  bucket_name = local.s3-sufix
 }
 
 
