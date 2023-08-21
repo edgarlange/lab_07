@@ -9,13 +9,13 @@ terraform {
 
 module "olympo_vpc" {
   source              = "./modules/vpc"
-  vpc_name            = "${local.prefix_sufix}-vpc"
+  vpc_name            = "${local.prefix-sufix}-vpc"
   virginia_cidr       = "10.215.0.0/16"
   subnets             = ["10.215.100.0/24", "10.215.1.0/24"]
   ingress_port_list   = [22, 80, 443]
   sg_ingress_cidr     = "190.140.80.94/32"
-  public_subnet_name  = "${local.prefix_sufix}-public"
-  private_subnet_name = "${local.prefix_sufix}-private"
+  public_subnet_name  = "${local.prefix-sufix}-public"
+  private_subnet_name = "${local.prefix-sufix}-private"
 }
 module "olympo_bucket" {
   source      = "./modules/s3"
