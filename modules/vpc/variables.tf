@@ -13,8 +13,8 @@ variable "private_subnet_name" {
   type        = string
 }
 
-variable "virginia_cidr" {
-  description = "CIDR Virginia"
+variable "principal_cidr" {
+  description = "CIDR Principal"
   type        = string
 }
 
