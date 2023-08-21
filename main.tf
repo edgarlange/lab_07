@@ -10,7 +10,7 @@ terraform {
 module "olympo_vpc" {
   source              = "./modules/vpc"
   vpc_name            = "${local.prefix-sufix}-vpc"
-  virginia_cidr       = "10.215.0.0/16"
+  prinprincipal_cidr  = "10.215.0.0/16"
   subnets             = ["10.215.100.0/24", "10.215.1.0/24"]
   ingress_port_list   = [22, 80, 443]
   sg_ingress_cidr     = "190.140.80.94/32"
